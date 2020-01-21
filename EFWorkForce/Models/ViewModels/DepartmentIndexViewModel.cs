@@ -7,8 +7,12 @@ namespace EFWorkForce.Models.ViewModels
 {
     public class DepartmentIndexViewModel
     {
-        public List<Department> Departments { get; set; }
-        public List<int> EmployeeCounts { get; set; }
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Budget { get; set; }
+        public int EmployeeCount { get; set; }
+   
     }
+
 }
+
