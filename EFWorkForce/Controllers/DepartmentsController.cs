@@ -23,12 +23,14 @@ namespace EFWorkForce.Controllers
         // GET: Departments
         public async Task<IActionResult> Index()
         {
-            var viewModel = new DepartmentIndexViewModel();
-            viewModel.Departments = _context.Department.ToList();
-            viewModel.EmployeeCounts = _context.Employee
-                                                            .GroupBy(e => e.DepartmentId)
-                                                            .Select(g = new { DeptId = g.Key, count = g.Count() });
-            return View(await departments.ToListAsync());
+            var departments = await _context.Department.Select(d => new DepartmentIndexViewModel()
+            {
+                Id = d.Id,
+                Name = d.Name,
+                Budget = d.Budget,
+                EmployeeCount = d.Employees.Count()
+            }).ToListAsync();
+            return View(departments);
         }
 
         // GET: Departments/Details/5
