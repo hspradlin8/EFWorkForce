@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EFWorkForce.Models.Department>
+﻿@model IEnumerable<EFWorkForce.Models.ViewModels.DepartmentSummaryViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -18,8 +18,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Budget)
             </th>
-            <th>
-                Employee Count
+            <th>@Html.DisplayNameFor(model => model.EmployeeCount)
             </th>
         </tr>
     </thead>
@@ -33,7 +32,7 @@
                 @Html.DisplayFor(modelItem => item.Budget)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Employees.Count)
+                @Html.DisplayFor(modelItem => item.EmployeeCount)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

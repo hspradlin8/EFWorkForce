@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EFWorkForce.Models.ViewModels
 {
-    public class DepartmentIndexViewModel
+    public class DepartmentSummaryViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

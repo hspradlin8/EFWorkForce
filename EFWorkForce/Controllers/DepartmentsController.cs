@@ -23,7 +23,7 @@ namespace EFWorkForce.Controllers
         // GET: Departments
         public async Task<IActionResult> Index()
         {
-            var departments = await _context.Department.Select(d => new DepartmentIndexViewModel()
+            var departments = await _context.Department.Select(d => new DepartmentSummaryViewModel
             {
                 Id = d.Id,
                 Name = d.Name,
